@@ -2,6 +2,12 @@ import { useForm, ValidationError } from "@formspree/react";
 import "./index.css";
 import "./App.css";
 
+import medicineImage from "./assets/medicine.png";
+import taskManagerImage from "./assets/task-manager.png";
+import lab1Image from "./assets/lab1.png";
+import reactAppImage from "./assets/react-app.png";
+
+
 /* =========================================
    PROJECT DATA
 ========================================= */
@@ -13,7 +19,7 @@ const projects = [
     description:
       "A full-stack medicine inventory application with authentication, REST API integration, database persistence, validation, and a responsive React interface.",
     tags: ["React", "Laravel", "SQLite", "REST API"],
-    type: "lumina",
+    image: medicineImage,
     github:
       "https://github.com/howellsy07/medicine-inventory-system",
     live: "",
@@ -25,7 +31,7 @@ const projects = [
     description:
       "A full-stack task management application featuring task creation, editing, filtering, completion tracking, validation, and CRUD functionality.",
     tags: ["React", "Laravel", "Inertia", "Vite"],
-    type: "finance",
+    image: taskManagerImage,
     github:
       "https://github.com/howellsy07/ccs112-task-manager",
     live: "",
@@ -37,7 +43,7 @@ const projects = [
     description:
       "A web development project created as part of the CCS112 laboratory and midterm coursework.",
     tags: ["Web Development", "CSS", "JavaScript"],
-    type: "journal",
+    image: lab1Image,
     github:
       "https://github.com/howellsy07/ccs112-lab1-midterm",
     live: "",
@@ -49,12 +55,13 @@ const projects = [
     description:
       "A React-based web application showcasing frontend development and component-based UI implementation.",
     tags: ["React", "JavaScript", "Vite"],
-    type: "lumina",
+    image: reactAppImage,
     github:
       "https://github.com/howellsy07/my-react-app",
     live: "",
   },
 ];
+
 
 
 /* =========================================
@@ -188,80 +195,13 @@ function Marquee() {
    PROJECT VISUALS
 ========================================= */
 
-function ProjectVisual({ type }) {
-  if (type === "lumina") {
-    return (
-      <div className="project-visual project-lavender">
-        <div className="visual-window">
-          <div className="window-bar">
-            <span />
-            <span />
-            <span />
-          </div>
-
-          <div className="visual-content">
-            <div className="visual-title">
-              <span>create</span>
-              <strong>beautiful</strong>
-              <strong>things.</strong>
-            </div>
-
-            <div className="visual-circle" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (type === "finance") {
-    return (
-      <div className="project-visual project-purple">
-        <div className="visual-window">
-          <div className="window-bar">
-            <span />
-            <span />
-            <span />
-          </div>
-
-          <div className="visual-content">
-            <div className="chart-label">+24.8%</div>
-
-            <div className="chart">
-              <span className="chart-bar bar-1" />
-              <span className="chart-bar bar-2" />
-              <span className="chart-bar bar-3" />
-              <span className="chart-bar bar-4" />
-              <span className="chart-bar bar-5" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+function ProjectVisual({ image, title }) {
   return (
-    <div className="project-visual project-pink">
-      <div className="visual-window">
-        <div className="window-bar">
-          <span />
-          <span />
-          <span />
-        </div>
-
-        <div className="visual-content journal">
-          <small>SEPTEMBER 24</small>
-
-          <h3>
-            Notes from
-            <br />
-            a quiet morning
-          </h3>
-
-          <p>
-            There is beauty in slowing down and noticing the small things...
-          </p>
-        </div>
-      </div>
+    <div className="project-image">
+      <img
+        src={image}
+        alt={`${title} screenshot`}
+      />
     </div>
   );
 }
@@ -294,7 +234,11 @@ function Work() {
         {projects.map((project) => (
           <article className="project" key={project.number}>
             
-            <ProjectVisual type={project.type} />
+            <ProjectVisual
+              image={project.image}
+              title={project.title}
+            />
+
 
             <div className="project-info">
               <span className="project-number">
