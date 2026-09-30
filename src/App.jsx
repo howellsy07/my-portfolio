@@ -293,15 +293,17 @@ function Work() {
       <div className="projects">
         {projects.map((project) => (
           <article className="project" key={project.number}>
+            
             <ProjectVisual type={project.type} />
 
             <div className="project-info">
-              <span className="project-number">{project.number}</span>
+              <span className="project-number">
+                {project.number}
+              </span>
 
               <h3>{project.title}</h3>
 
               <p>{project.description}</p>
-
               <div className="project-bottom">
                 <div className="tags">
                   {project.tags.map((tag) => (
@@ -309,13 +311,26 @@ function Work() {
                   ))}
                 </div>
 
-                <button
-                  className="circle-button"
-                  type="button"
-                  aria-label={`View ${project.title}`}
-                >
-                  ↗
-                </button>
+                <div className="project-links">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="github-link"
+                  >
+                    GitHub
+                  </a>
+
+                  <a
+                    href={project.live || project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="circle-button"
+                    aria-label={`View ${project.title}`}
+                  >
+                    ↗
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -324,6 +339,7 @@ function Work() {
     </section>
   );
 }
+
 
 /* =========================================
    ABOUT
