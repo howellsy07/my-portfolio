@@ -9,29 +9,53 @@ import "./App.css";
 const projects = [
   {
     number: "01",
-    title: "Lumina",
+    title: "Medicine Inventory System",
     description:
-      "A calm and elegant landing page designed for a modern creative studio.",
-    tags: ["React", "UI Design"],
+      "A full-stack medicine inventory application with authentication, REST API integration, database persistence, validation, and a responsive React interface.",
+    tags: ["React", "Laravel", "SQLite", "REST API"],
     type: "lumina",
+    github:
+      "https://github.com/howellsy07/medicine-inventory-system",
+    live: "",
   },
+
   {
     number: "02",
-    title: "Mori Finance",
+    title: "CCS112 Task Manager",
     description:
-      "A minimal finance dashboard focused on making complex data feel simple.",
-    tags: ["Dashboard", "UX"],
+      "A full-stack task management application featuring task creation, editing, filtering, completion tracking, validation, and CRUD functionality.",
+    tags: ["React", "Laravel", "Inertia", "Vite"],
     type: "finance",
+    github:
+      "https://github.com/howellsy07/ccs112-task-manager",
+    live: "",
   },
+
   {
     number: "03",
-    title: "Sora Journal",
+    title: "CCS112 Lab 1 — Midterm",
     description:
-      "A soft editorial-style journal experience with an emphasis on typography.",
-    tags: ["Web Design", "Frontend"],
+      "A web development project created as part of the CCS112 laboratory and midterm coursework.",
+    tags: ["Web Development", "CSS", "JavaScript"],
     type: "journal",
+    github:
+      "https://github.com/howellsy07/ccs112-lab1-midterm",
+    live: "",
+  },
+
+  {
+    number: "04",
+    title: "My React App",
+    description:
+      "A React-based web application showcasing frontend development and component-based UI implementation.",
+    tags: ["React", "JavaScript", "Vite"],
+    type: "lumina",
+    github:
+      "https://github.com/howellsy07/my-react-app",
+    live: "",
   },
 ];
+
 
 /* =========================================
    NAVBAR
@@ -504,7 +528,7 @@ function Footer() {
     <footer>
       <a href="#home" className="footer-logo">
         <span className="logo-dot" />
-        <span>Howell.</span>
+        <span>Howell</span>
       </a>
 
       <p>© 2026 Howell Sy. Designed & built with care.</p>
