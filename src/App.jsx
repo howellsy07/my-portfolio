@@ -322,8 +322,8 @@ function About() {
 
           <p className="about-text">
             When I'm not building things for the web, you'll probably find me
-            collecting design inspiration, listening to music, or drinking an
-            unreasonable amount of coffee.
+            collecting design inspiration, listening to music, making dance covers or drinking an
+            unreasonable amount of Iced Milktea, Milo and Chocolate.
           </p>
 
           <div className="skills">
