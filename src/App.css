@@ -521,8 +521,7 @@ button {
 .marquee-track {
   display: flex;
   width: max-content;
-
-  animation: marquee 18s linear infinite;
+  animation: marquee 16s linear infinite;
 }
 
 .marquee-group {
@@ -554,9 +553,10 @@ button {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-16.666667%);
   }
 }
+
 
 
 

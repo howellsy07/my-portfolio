@@ -177,30 +177,30 @@ function Marquee() {
     "UI / UX DESIGN",
   ];
 
+  const MarqueeGroup = () => (
+    <div className="marquee-group">
+      {marqueeItems.map((item, index) => (
+        <span key={index}>
+          {item} <i>✦</i>
+        </span>
+      ))}
+    </div>
+  );
+
   return (
     <div className="marquee">
       <div className="marquee-track">
-
-        <div className="marquee-group">
-          {marqueeItems.map((item, index) => (
-            <span key={index}>
-              {item} <i>✦</i>
-            </span>
-          ))}
-        </div>
-
-        <div className="marquee-group" aria-hidden="true">
-          {marqueeItems.map((item, index) => (
-            <span key={index}>
-              {item} <i>✦</i>
-            </span>
-          ))}
-        </div>
-
+      <MarqueeGroup />
+      <MarqueeGroup />
+      <MarqueeGroup />
+      <MarqueeGroup />
+      <MarqueeGroup />
+      <MarqueeGroup />
       </div>
     </div>
   );
 }
+
 
 /* =========================================
    PROJECT VISUALS
