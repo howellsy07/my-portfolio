@@ -171,21 +171,32 @@ function Hero() {
 ========================================= */
 
 function Marquee() {
+  const marqueeItems = [
+    "WEB EXPERIENCES",
+    "CREATIVE DEVELOPMENT",
+    "UI / UX DESIGN",
+  ];
+
   return (
     <div className="marquee">
       <div className="marquee-track">
-        <span>CREATIVE DEVELOPMENT</span>
-        <i>✦</i>
-        <span>UI / UX DESIGN</span>
-        <i>✦</i>
-        <span>WEB EXPERIENCES</span>
-        <i>✦</i>
-        <span>CREATIVE DEVELOPMENT</span>
-        <i>✦</i>
-        <span>UI / UX DESIGN</span>
-        <i>✦</i>
-        <span>WEB EXPERIENCES</span>
-        <i>✦</i>
+
+        <div className="marquee-group">
+          {marqueeItems.map((item, index) => (
+            <span key={index}>
+              {item} <i>✦</i>
+            </span>
+          ))}
+        </div>
+
+        <div className="marquee-group" aria-hidden="true">
+          {marqueeItems.map((item, index) => (
+            <span key={index}>
+              {item} <i>✦</i>
+            </span>
+          ))}
+        </div>
+
       </div>
     </div>
   );

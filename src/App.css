@@ -501,6 +501,13 @@ button {
 ========================================= */
 
 .marquee {
+  width: 100vw;
+  max-width: none;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
   overflow: hidden;
 
   padding: 21px 0;
@@ -512,11 +519,20 @@ button {
 }
 
 .marquee-track {
+  display: flex;
   width: max-content;
 
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-group {
   display: flex;
   align-items: center;
   gap: 36px;
+
+  padding-right: 36px;
+
+  flex-shrink: 0;
 
   color: #948da1;
 
@@ -524,19 +540,25 @@ button {
   font-weight: 600;
   letter-spacing: 2.5px;
 
-  animation: marquee 25s linear infinite;
+  white-space: nowrap;
 }
 
-.marquee i {
+.marquee-group i {
   color: var(--purple);
   font-style: normal;
 }
 
 @keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
   to {
-    transform: translateX(-30%);
+    transform: translateX(-50%);
   }
 }
+
+
 
 /* =========================================
    SECTIONS
